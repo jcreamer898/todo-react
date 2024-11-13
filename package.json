@@ -5,24 +5,42 @@
   "homepage": "https://mdn.github.io/todo-react/",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3000 --open",
-    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:webpack": "webpack build",
+    "start:webpack": "webpack serve",
+    "build:rspack": "rspack webpack -c rspack.config.js",
+    "start:rspack": "rspack serve -c rspack.config.js",
+    "build:parcel": "parcel build index.html",
+    "start:parcel": "parcel index.html",
+    "build:vite": "vite build",
+    "start:vite": "vite --port 3000 --open"
   },
   "dependencies": {
+    "html-webpack-plugin": "^5.6.0",
     "nanoid": "^5.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@rspack/cli": "^0.7.4",
+    "@rspack/core": "^0.7.4",
+    "@swc/core": "^1.6.3",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
+    "@types/webpack": "^5.28.5",
     "@vitejs/plugin-react": "^4.3.3",
+    "css-loader": "^7.1.2",
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.14",
-    "vite": "^5.4.11"
+    "parcel": "^2.12.0",
+    "process": "^0.11.10",
+    "style-loader": "^4.0.0",
+    "swc-loader": "^0.2.6",
+    "vite": "^5.4.11",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
   }
 }
